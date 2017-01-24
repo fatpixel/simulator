@@ -1,0 +1,26 @@
+{
+  "name": "fatpixel/simulator",
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/thephpleague/route"
+    }
+  ],
+  "require": {
+    "roave/security-advisories": "dev-master",
+    "league/route": "dev-master",
+    "league/plates": "^3.3",
+    "zendframework/zend-diactoros": "^1.3",
+    "okneloper/session": "^0.1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "SimpleZoo\\": "app/"
+    }
+  },
+  "minimum-stability": "dev",
+  "scripts": {
+    "run": "php -S 127.0.0.1:4321 -t public public/index.php"
+  }
+}
