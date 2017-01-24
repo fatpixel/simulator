@@ -11,18 +11,39 @@ use Zend\Diactoros\Response;
 use Zend\Diactoros\Response\SapiEmitter;
 use Zend\Diactoros\ServerRequest;
 
+/**
+ * Class Bootstrap
+ * @package SimpleZoo
+ */
 class Bootstrap
 {
+    /**
+     * @var
+     */
     private static $application;
+    /**
+     * @var \League\Container\Container
+     */
     private $container;
+    /**
+     * @var \League\Route\RouteCollection
+     */
     private $routes;
 
+    /**
+     * Bootstrap constructor.
+     * @param \League\Container\Container $container
+     * @param \League\Route\RouteCollection $routes
+     */
     private function __construct(Container $container, RouteCollection $routes)
     {
         $this->container = $container;
         $this->routes = $routes;
     }
 
+    /**
+     * @return \SimpleZoo\Bootstrap
+     */
     public static function application()
     {
         /**
@@ -62,6 +83,9 @@ class Bootstrap
         return self::$application;
     }
 
+    /**
+     *
+     */
     public function respond()
     {
         $request = $this->container->get(ServerRequest::class);

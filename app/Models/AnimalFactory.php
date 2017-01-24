@@ -1,8 +1,17 @@
 <?php
 namespace SimpleZoo\Models;
 
+/**
+ * Class AnimalFactory
+ * @package SimpleZoo\Models
+ */
 class AnimalFactory
 {
+    /**
+     * @param $animal
+     * @return \SimpleZoo\Models\Elephant|\SimpleZoo\Models\Giraffe|\SimpleZoo\Models\Monkey
+     * @throws \Exception
+     */
     public static function factory($animal)
     {
         switch (mb_strtolower($animal)) {
